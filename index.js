@@ -599,14 +599,14 @@ axios.get(`https://alfians-api.herokuapp.com/api/yta?url=${teks}`).then((res) =>
 
 if (text.includes("Thoth")){
 const aris = text.replace(/Thoth /, "")
-axios.get(`https://st4rz.herokuapp.com/api/simsimi?kata=${aris}`).then((res) => {
+axios.get(`https://arugaz.herokuapp.com/api/simisimien?text=}`).then((res) => {
     let hasil = `${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
   })
  }
  if (text.includes("Bot")){
 const aris = text.replace(/Bot /, "")
-axios.get(`https://st4rz.herokuapp.com/api/simsimi?kata=${aris}`).then((res) => {
+axios.get(`https://arugaz.herokuapp.com/api/simisimien?text=}`).then((res) => {
     let hasil = `${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
   })
