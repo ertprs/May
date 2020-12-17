@@ -14,10 +14,10 @@ const info = require("./lib/info.js");
 
 
 //
-const BotName = 'Mini Thoth'; // Nome do Whatsapp Bot
-const instagramlu = 'https://www.instagram.com/crwth.gs/'; // Nome do Instagram
-const whatsapplu = '+55 11 940787327'; // Número do Whatsapp
-const kapanbotaktif = '24 Horas'; // Quando seu bot estava ativo
+const BotName = 'NIKE O SUPREMO'; // Nome do Whatsapp Bot
+const instagramlu = 'https://www.instagram.com/em3rzoum/'; // Nome do Instagram
+const whatsapplu = '+55 42 99276766'; // Número do Whatsapp
+const kapanbotaktif = '24 Hora'; // Quando seu bot estava ativo
 const grupch1 = 'OFF'; // GRUP RESMI LU 1
 const grupch2 = 'OFF'; // OFFICIAL GRUP LU 2
 //
@@ -197,10 +197,10 @@ var tampilTanggal = "DATA: " + hari + ", " + tanggal + " " + bulan + " " + tahun
 var tampilWaktu = "HORA: " + jam + ":" + menit + ":" + detik;
 conn.sendMessage(id, menu.menu(id, BotName, corohelp, tampilTanggal, tampilWaktu, instagramlu, whatsapplu, kapanbotaktif, grupch1, grupch2) ,MessageType.text);
 }
-else if (text == 'Thoth voce gosta de min?'){
+else if (text == 'nike voce gosta de min?'){
 conn.sendMessage(id, 'Claro que sim eu pagaria facil kkk' ,MessageType.text);
 }
-else if (text == 'Te amo thoth'){
+else if (text == 'Te amo nike'){
 conn.sendMessage(id, 'Eu eo resto do grupo né?' ,MessageType.text);
 }
 else if (text == 'Assalamualaikum'){
@@ -279,7 +279,7 @@ else if (text == '#dar'){
 conn.sendMessage(id, 'VAI LER O SALMO 91 VAGABUNDO(A)🤨...' ,MessageType.text);
 }
 else if (text == '#kiss'){
-conn.sendMessage(id, 'Thoth deu um beijo em você🥰' ,MessageType.text);
+conn.sendMessage(id, 'Nike deu um beijo em você🥰' ,MessageType.text);
 }
 else if (text == '#sticker'){
 conn.sendMessage(id, 'COLOQUE O COMANDO NA LEGENDA DA FOTO...' ,MessageType.text);
@@ -597,6 +597,20 @@ axios.get(`https://alfians-api.herokuapp.com/api/yta?url=${teks}`).then((res) =>
 })
 } 
 
+if (text.includes("thoth")){
+const aris = text.replace(/thoth /, "")
+axios.get(`https://st4rz.herokuapp.com/api/simsimi?kata=${aris}`).then((res) => {
+    let hasil = `${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+  })
+ }
+ if (text.includes("Bot")){
+const aris = text.replace(/Bot /, "")
+axios.get(`https://st4rz.herokuapp.com/api/simsimi?kata=${aris}`).then((res) => {
+    let hasil = `${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+  })
+ }
 
    if (text.includes('#escrever')){
   var teks = text.replace(/#escrever /, ' ')
@@ -756,7 +770,7 @@ gtts.save(filepath, suara, function() {
 await new Promise(resolve => setTimeout(resolve, 500));
 
 	if(suara.length > 200){ // check longness of text, because otherways google translate will give me a empty file
-  msg.reply("VOCÊ ATINGIU O LIMETE DE PALAVRAS" )
+  msg.reply("VOCÊATINGIU O LIMETE DE PALAVRAS" )
 }else{
 
 const buffer = fs.readFileSync(filepath)
