@@ -197,10 +197,10 @@ var tampilTanggal = "DATA: " + hari + ", " + tanggal + " " + bulan + " " + tahun
 var tampilWaktu = "HORA: " + jam + ":" + menit + ":" + detik;
 conn.sendMessage(id, menu.menu(id, BotName, corohelp, tampilTanggal, tampilWaktu, instagramlu, whatsapplu, kapanbotaktif, grupch1, grupch2) ,MessageType.text);
 }
-else if (text == 'nike voce gosta de min?'){
+else if (text == 'Thoth voce gosta de min?'){
 conn.sendMessage(id, 'Claro que sim eu pagaria facil kkk' ,MessageType.text);
 }
-else if (text == 'Te amo nike'){
+else if (text == 'Te amo thoth'){
 conn.sendMessage(id, 'Eu eo resto do grupo né?' ,MessageType.text);
 }
 else if (text == 'Assalamualaikum'){
@@ -279,7 +279,7 @@ else if (text == '#dar'){
 conn.sendMessage(id, 'VAI LER O SALMO 91 VAGABUNDO(A)🤨...' ,MessageType.text);
 }
 else if (text == '#kiss'){
-conn.sendMessage(id, 'Nike deu um beijo em você🥰' ,MessageType.text);
+conn.sendMessage(id, 'Thoth deu um beijo em você🥰' ,MessageType.text);
 }
 else if (text == '#sticker'){
 conn.sendMessage(id, 'COLOQUE O COMANDO NA LEGENDA DA FOTO...' ,MessageType.text);
@@ -614,7 +614,7 @@ axios.get(`https://arugaz.herokuapp.com/api/simisimien?text=}`).then((res) => {
 
    if (text.includes('#escrever')){
   var teks = text.replace(/#escrever /, ' ')
-    axios.get('https://bangandre.herokuapp.com/nulis?teks='+teks)
+    axios.get('https://arugaz.herokuapp.com/api/nulis?text='+teks)
     .then((res) => {
       imageToBase64(res.data.result)
         .then(
