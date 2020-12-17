@@ -14,10 +14,10 @@ const info = require("./lib/info.js");
 
 
 //
-const BotName = 'NIKE O SUPREMO'; // Nome do Whatsapp Bot
-const instagramlu = 'https://www.instagram.com/em3rzoum/'; // Nome do Instagram
-const whatsapplu = '+55 42 99276766'; // Número do Whatsapp
-const kapanbotaktif = '24 Hora'; // Quando seu bot estava ativo
+const BotName = 'Mini Thoth'; // Nome do Whatsapp Bot
+const instagramlu = 'https://www.instagram.com/crwthmgs/'; // Nome do Instagram
+const whatsapplu = '+55 11 940787327'; // Número do Whatsapp
+const kapanbotaktif = '24 Horas'; // Quando seu bot estava ativo
 const grupch1 = 'OFF'; // GRUP RESMI LU 1
 const grupch2 = 'OFF'; // OFFICIAL GRUP LU 2
 //
@@ -597,8 +597,8 @@ axios.get(`https://alfians-api.herokuapp.com/api/yta?url=${teks}`).then((res) =>
 })
 } 
 
-if (text.includes("thoth")){
-const aris = text.replace(/thoth /, "")
+if (text.includes("Thoth")){
+const aris = text.replace(/Thoth /, "")
 axios.get(`https://st4rz.herokuapp.com/api/simsimi?kata=${aris}`).then((res) => {
     let hasil = `${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
