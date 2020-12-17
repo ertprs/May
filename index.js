@@ -197,7 +197,7 @@ var tampilTanggal = "DATA: " + hari + ", " + tanggal + " " + bulan + " " + tahun
 var tampilWaktu = "HORA: " + jam + ":" + menit + ":" + detik;
 conn.sendMessage(id, menu.menu(id, BotName, corohelp, tampilTanggal, tampilWaktu, instagramlu, whatsapplu, kapanbotaktif, grupch1, grupch2) ,MessageType.text);
 }
-else if (text == 'Thoth voce gosta de mim?'){
+else if (text == 'Thoth voce gosta de min?'){
 conn.sendMessage(id, 'Claro que sim eu pagaria facil kkk' ,MessageType.text);
 }
 else if (text == 'Te amo thoth'){
@@ -279,7 +279,7 @@ else if (text == '#dar'){
 conn.sendMessage(id, 'VAI LER O SALMO 91 VAGABUNDO(A)🤨...' ,MessageType.text);
 }
 else if (text == '#kiss'){
-conn.sendMessage(id, 'Nike deu um beijo em você🥰' ,MessageType.text);
+conn.sendMessage(id, 'Thoth deu um beijo em você🥰' ,MessageType.text);
 }
 else if (text == '#sticker'){
 conn.sendMessage(id, 'COLOQUE O COMANDO NA LEGENDA DA FOTO...' ,MessageType.text);
@@ -597,20 +597,6 @@ axios.get(`https://alfians-api.herokuapp.com/api/yta?url=${teks}`).then((res) =>
 })
 } 
 
-if (text.includes("thoth")){
-const aris = text.replace(/thoth /, "")
-axios.get(`https://st4rz.herokuapp.com/api/simsimi?kata=${aris}`).then((res) => {
-    let hasil = `${res.data.result}`;
-    conn.sendMessage(id, hasil ,MessageType.text);
-  })
- }
- if (text.includes("Bot")){
-const aris = text.replace(/Bot /, "")
-axios.get(`https://st4rz.herokuapp.com/api/simsimi?kata=${aris}`).then((res) => {
-    let hasil = `${res.data.result}`;
-    conn.sendMessage(id, hasil ,MessageType.text);
-  })
- }
 
    if (text.includes('#escrever')){
   var teks = text.replace(/#escrever /, ' ')
@@ -641,10 +627,10 @@ axios.get(`https://st4rz.herokuapp.com/api/simsimi?kata=${aris}`).then((res) => 
             conn.sendMessage(
                id,
                `
-     ${kata}
+     _${kata}_
         
     
-	~${author}
+	*~${author}*
          `, MessageType.text
             );
 
@@ -788,3 +774,5 @@ const buffer = fs.readFileSync(filepath)
 
    // end of file
 
+
+})
