@@ -181,8 +181,8 @@ axios.get(`https://mhankbarbar.herokuapp.com/api/ig?url=${teks}&apiKey=zFuV88pxc
 if (text.includes("#infoig")){
   const teks = text.replace(/!infoig /, "")
   axios.get(`https://alfians-api.herokuapp.com/api/stalk?username=${teks}`).then ((res) =>{
-  conn.sendMessage(id, '[ESPERE] Procurando...⏳', MessageType.text)
-  let hasil = `@ _${teks}_ \n\n *Username🐒* : _${res.data.Username}_ \n *Nome🐒* : _${res.data.Name}_ \n *Número de Seguidores🐵* : _${res.data.Jumlah_Followers}_ \n *Seguindo🐵* : _${res.data.Jumlah_Following}_ \n *Postagens🐵* : _${res.data.Jumlah_Post}_ `;
+  conn.sendMessage(id, '[WAIT] Searching...⏳', MessageType.text)
+  let hasil = `BIODATA INSTAGRAM ATAS NAMA _${teks}_ \n\n *Username🐒* : _${res.data.Username}_ \n *Nama🐒* : _${res.data.Name}_ \n *Jumlah Followers🐵* : _${res.data.Jumlah_Followers}_ \n *Jumlah Following🐵* : _${res.data.Jumlah_Following}_ \n *Jumlah Post🐵* : _${res.data.Jumlah_Post}_ `;
   conn.sendMessage(id, hasil, MessageType.text);
 })
 }	
@@ -560,8 +560,6 @@ conn.sendMessage(id, 'kirim #gacha cewek/cowok\n\nContoh: #gacha cewek' ,Message
 	})
 }
 
-
-
    
  if (text.includes("#ytmp4")){
 const teks = text.replace(/!ytmp4 /, "")
@@ -574,15 +572,15 @@ axios.get(`https://alfians-api.herokuapp.com/api/ytv?url=${teks}`).then((res) =>
 
    
    //ytmp3 
-   if (text.includes("#ytmp3")){
-const teks = text.replace(/#ytmp3 /, "")
+if (text.includes("#ytmp3")){
+const teks = text.replace(/!ytmp3 /, "")
 axios.get(`https://alfians-api.herokuapp.com/api/yta?url=${teks}`).then((res) => {
-	conn.sendMessage(id, '[ESPERE] Em andamento⏳ por favor, aguarde um momento', MessageType.text)
-    let hasil = `Sua música foi encontrada\nClique no link a baixo para baixar¸\n\nMúsica: ${res.data.title}\n\nUkuran audio: ${res.data.filesize}\n\nLink: ${res.data.result}`;
+	conn.sendMessage(id, '[WAIT] Searching...⏳', MessageType.text)
+    let hasil = `*Judul:* ${res.data.title}\n\n *Zize:* ${res.data.filesize}\n\n *Audio:* ${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
-} 
-
+}
+	
 if (text.includes("Thoth")){
 const aris = text.replace(/Thoth /, "")
 axios.get(`https://arugaz.herokuapp.com/api/simisimi?kata=}`).then((res) => {
