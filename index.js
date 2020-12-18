@@ -767,7 +767,7 @@ if (text.includes("#randomanime"))
     
     });
     }
-  
+
     if (msg.body.startsWith('!subject ')) {
         if (chat.isGroup) {
             if (dariGC.replace('@c.us', '') == chat.owner.user) {
@@ -857,17 +857,11 @@ if (text.includes("#randomanime"))
             }
         } else {
             botTol2()
-        }
-    } else if (msg.body == '!owner') {
-        if (chat.isGroup) {
-            msg.reply(JSON.stringify({
-                owner: chat.owner.user
-            }))
-        } else {
-            botTol2()
-        }
+            }
+        )
+    
+    });
     }
- }  
        
 if (text.includes("#scdl")){
 const fs = require("fs");
