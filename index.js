@@ -161,6 +161,41 @@ axios.get(`https://st4rz.herokuapp.com/api/wiki?q=${teks}`).then((res) => {
     
     });
 }
+	
+    // Gif sticker
+    if (message.caption === '#gif') {
+      const buffer = await client.decryptFile(message);
+
+      const videoFile = `./files/img-gif-sticker_${message.sender.pushname}+${message.sender.id}.${mime.extension(message.mimetype)}`;
+      const gifFile = `./files/img-gif-sticker_tmp_${message.sender.pushname}+${message.sender.id}.${mime.extension('image/gif')}`;
+
+      // Verificando se existe arquivos antigos e removendo-os
+      if (fs.existsSync(videoFile)) {
+        try {
+          fs.unlinkSync(videoFile);
+        } catch (err) {
+          console.log('WARNING: unlinkSync', err);
+        }
+      }
+      if (fs.existsSync(gifFile)) {
+        try {
+          fs.unlinkSync(gifFile);
+        } catch (err) {
+          console.log('WARNING: unlinkSync', err);
+        }
+      }
+
+      // Enviando gifsticker
+      const messageSend = () => {
+        client
+            .sendImageAsStickerGif(message.chatId, gifFile)
+            .then(() => {
+              console.log('Result: ', 'Gifsticker');
+            }).catch((err) => {
+              console.log('saveVideo_INSIDE_FUNCTION_ERROR: ', err);
+              customMessage('Erro ao criar sticker. Manda um gif curto, MACACO!');
+            });
+      };
 
 if (text.includes("#fb")){
 const teks = text.replace(/#fb /, "")
