@@ -170,13 +170,12 @@ axios.get(`https://mhankbarbar.herokuapp.com/api/epbe?url=${teks}&apiKey=zFuV88p
 })
 }
 
-if (text.includes("#igstalk")){
-	const text = text.replace(/~igstalk /, "")
-	conn.sendMessage(id, "[ WAIT ] Sedang di proses silahkan tunggu sebentar", MessageType.text)
-	axios.get(`https://arugaz.herokuapp.com/api/stalk?username=ini.arga${text}`).then ((res) => {
-    let hasil = ` *Username:* ${res.data.username}\n\n *nama:* ${res.data.name}\n\n *Bio:* ${res.data.biodata}\n\n *Mengikuti:* ${res.data.jumlah_followers}\n\n *Pengikut:* ${res.data.jumlah_following}\n\n *Jumlah Postingan:* ${res.data.jumlah_post}\n\n*Profile:* ${res.data.profile_pic}`
-    conn.sendMessage(id, hasil, MessageType.text)
-    })
+if (text.includes("#ig")){
+const teks = text.replace(/#ig /, "")
+axios.get(`https://arugaz.herokuapp.com/api/stalk?username=`).then((res) => {
+    let hasil = `Download sendiri melalui link dibawah ya, takut servernya down xixi..\n\nLink: ${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+})
 }
 
 if (text.includes("#twt")){
@@ -691,31 +690,6 @@ axios.get(`https://arugaz.herokuapp.com/api/simisimi?kata=}`).then((res) => {
          });
    }
 
-const fs = require('fs-extra')
-
-module.exports = welcome = async (client, event) => {
-    //console.log(event.action)
-    const welkom = JSON.parse(fs.readFileSync('./lib/welcome.json'))
-    const isWelkom = welkom.includes(event.chat)
-    try {
-        if (event.action == 'add' && isWelkom) {
-            const gChat = await client.getChatById(event.chat)
-            const pChat = await client.getContact(event.who)
-            const { contact, groupMetadata, name } = gChat
-            const pepe = await client.getProfilePicFromServer(event.who)
-            const capt = `Olá novo membro👋, Bem-vindo ao grupo *${name}* espero que você se sinta em casa.`
-            if (pepe == '' || pepe == undefined) {
-                await client.sendFileFromUrl(event.chat, 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTQcODjk7AcA4wb_9OLzoeAdpGwmkJqOYxEBA&usqp=CAU', 'profile.jpg', capt)
-            } else {
-                await client.sendFileFromUrl(event.chat, pepe, 'profile.jpg', capt)
-            }
-
-        }
-    } catch (err) {
-        console.log(err)
-    }
-}	
-	
 
    if (text.includes("#dog"))
    {
