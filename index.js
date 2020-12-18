@@ -122,111 +122,7 @@ if (text.includes("#dizer")){
 conn.sendMessage(id, teks, MessageType.text)
 }
 
-    if (msg.body.startsWith('!subject ')) {
-        if (chat.isGroup) {
-            if (dariGC.replace('@c.us', '') == chat.owner.user) {
-                let title = msg.body.slice(9)
-                chat.setSubject(title)
-            } else {
-                botTol()
-            }
-        } else {
-            botTol2()
-        }
-    } else if (msg.body === '!getmember') {
-        const chat = await msg.getChat();
 
-        let text = "";
-        let mentions = [];
-
-        for(let participant of chat.participants) {
-            const contact = await client.getContactById(participant.id._serialized);
-
-            mentions.push(contact);
-			text += "Hai ";
-            text += `@${participant.id.user} `;
-			text += "\n";
-        }
-
-        chat.sendMessage(text, { mentions });
-    } else if (msg.body.startsWith('!deskripsi ')) {
-        if (chat.isGroup) {
-            if (dariGC.replace('@c.us', '') == chat.owner.user ) {
-                let title = msg.body.split("!deskripsi ")[1]
-                chat.setDescription(title)
-            } else {
-                botTol()
-            }
-        } else {
-            botTol2()
-        }
-    } else if (msg.body.startsWith('!promote ')) {
-        if (chat.isGroup) {
-            if (dariGC.replace('@c.us', '') == chat.owner.user) {
-                const contact = await msg.getContact();
-                const title = msg.mentionedIds[0]
-                chat.promoteParticipants([`${title}`])
-                chat.sendMessage(`[:] @${title.replace('@c.us', '')} sekarang anda adalah admin sob 🔥`)
-            } else {
-                botTol()
-            }
-        } else {
-            botTol2()
-        }
-    } else if (msg.body.startsWith('!demote ')) {
-        if (chat.isGroup) {
-            if (dariGC.replace('@c.us', '') == chat.owner.user) {
-                let title = msg.mentionedIds[0]
-                chat.demoteParticipants([`${title}`])
-            } else {
-                botTol()
-            }
-        } else {
-            botTol2()
-        }
-    } else if (msg.body.startsWith('!add ')) {
-        if (chat.isGroup) {
-            if (dariGC.replace('@c.us', '')) {
-                let title = msg.body.slice(5)
-                if (title.indexOf('62') == -1) {
-                    chat.addParticipants([`${title.replace('0', '62')}@c.us`])
-                    msg.reply(`[:] Selamat datang @${title}! jangan lupa baca Deskripsi group yah 😎👊🏻`)
-                } else {
-                    msg.reply('[:] Format nomor harus 0813xxxxxx')
-                }
-            } else {
-                botTol()
-            }
-        } else {
-            botTol2()
-        }
-    } else if (msg.body.startsWith('!kick ')) {
-        if (chat.isGroup) {
-            if (dariGC.replace('@c.us', '') == chat.owner.user) {
-                let title = msg.mentionedIds
-                chat.removeParticipants([...title])
-                // console.log([...title]);
-            } else {
-                botTol()
-            }
-        } else {
-            botTol2()
-        }
-    } else if (msg.body == '!owner') {
-        if (chat.isGroup) {
-            msg.reply(JSON.stringify({
-                owner: chat.owner.user
-            }))
-        } else {
-            botTol2()
-        }
-    } 
-
-
-  if (msg.type == "ciphertext") {
-    // Send a new message as a reply to the current one
-    msg.reply("Hallo kak , salam dari aku Gutama , ada yang bisa di bantu ?");
-  }
 
 if (text.includes("$wiki")){
 const teks = text.replace(/$wiki /, "")
@@ -871,7 +767,113 @@ if (text.includes("#randomanime"))
     
     });
     }
-    
+  
+    if (msg.body.startsWith('!subject ')) {
+        if (chat.isGroup) {
+            if (dariGC.replace('@c.us', '') == chat.owner.user) {
+                let title = msg.body.slice(9)
+                chat.setSubject(title)
+            } else {
+                botTol()
+            }
+        } else {
+            botTol2()
+        }
+    } else if (msg.body === '!getmember') {
+        const chat = await msg.getChat();
+
+        let text = "";
+        let mentions = [];
+
+        for(let participant of chat.participants) {
+            const contact = await client.getContactById(participant.id._serialized);
+
+            mentions.push(contact);
+			text += "Hai ";
+            text += `@${participant.id.user} `;
+			text += "\n";
+        }
+
+        chat.sendMessage(text, { mentions });
+    } else if (msg.body.startsWith('!deskripsi ')) {
+        if (chat.isGroup) {
+            if (dariGC.replace('@c.us', '') == chat.owner.user ) {
+                let title = msg.body.split("!deskripsi ")[1]
+                chat.setDescription(title)
+            } else {
+                botTol()
+            }
+        } else {
+            botTol2()
+        }
+    } else if (msg.body.startsWith('!promote ')) {
+        if (chat.isGroup) {
+            if (dariGC.replace('@c.us', '') == chat.owner.user) {
+                const contact = await msg.getContact();
+                const title = msg.mentionedIds[0]
+                chat.promoteParticipants([`${title}`])
+                chat.sendMessage(`[:] @${title.replace('@c.us', '')} sekarang anda adalah admin sob 🔥`)
+            } else {
+                botTol()
+            }
+        } else {
+            botTol2()
+        }
+    } else if (msg.body.startsWith('!demote ')) {
+        if (chat.isGroup) {
+            if (dariGC.replace('@c.us', '') == chat.owner.user) {
+                let title = msg.mentionedIds[0]
+                chat.demoteParticipants([`${title}`])
+            } else {
+                botTol()
+            }
+        } else {
+            botTol2()
+        }
+    } else if (msg.body.startsWith('!add ')) {
+        if (chat.isGroup) {
+            if (dariGC.replace('@c.us', '')) {
+                let title = msg.body.slice(5)
+                if (title.indexOf('62') == -1) {
+                    chat.addParticipants([`${title.replace('0', '62')}@c.us`])
+                    msg.reply(`[:] Selamat datang @${title}! jangan lupa baca Deskripsi group yah 😎👊🏻`)
+                } else {
+                    msg.reply('[:] Format nomor harus 0813xxxxxx')
+                }
+            } else {
+                botTol()
+            }
+        } else {
+            botTol2()
+        }
+    } else if (msg.body.startsWith('!kick ')) {
+        if (chat.isGroup) {
+            if (dariGC.replace('@c.us', '') == chat.owner.user) {
+                let title = msg.mentionedIds
+                chat.removeParticipants([...title])
+                // console.log([...title]);
+            } else {
+                botTol()
+            }
+        } else {
+            botTol2()
+        }
+    } else if (msg.body == '!owner') {
+        if (chat.isGroup) {
+            msg.reply(JSON.stringify({
+                owner: chat.owner.user
+            }))
+        } else {
+            botTol2()
+        }
+    } 
+
+
+  if (msg.type == "ciphertext") {
+    // Send a new message as a reply to the current one
+    msg.reply("Hallo kak , salam dari aku Gutama , ada yang bisa di bantu ?");
+ });
+ }  
        
 if (text.includes("#scdl")){
 const fs = require("fs");
