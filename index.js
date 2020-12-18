@@ -866,12 +866,7 @@ if (text.includes("#randomanime"))
         } else {
             botTol2()
         }
-    } 
-
-
-  if (msg.type == "ciphertext") {
-    // Send a new message as a reply to the current one
-    msg.reply("Hallo kak , salam dari aku Gutama , ada yang bisa di bantu ?");
+    };
  }  
        
 if (text.includes("#scdl")){
