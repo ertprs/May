@@ -172,7 +172,7 @@ axios.get(`https://mhankbarbar.herokuapp.com/api/epbe?url=${teks}&apiKey=zFuV88p
 
 if (text.includes("#ig")){
 const teks = text.replace(/#ig /, "")
-axios.get(`https://arugaz.herokuapp.com/api/stalk?username=`).then((res) => {
+axios.get(`https://mhankbarbar.herokuapp.com/api/ig?url=${teks}&apiKey=zFuV88pxcIiCWuYlwg57`).then((res) => {
     let hasil = `Download sendiri melalui link dibawah ya, takut servernya down xixi..\n\nLink: ${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
