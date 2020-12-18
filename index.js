@@ -790,22 +790,14 @@ if (text.includes('#hentai')){
     })
 }
 
-	
-   if (text.includes('#imagem')){
-  var teks = text.replace(/#imagem /, ' ')
-    axios.get('https://tobz-api.herokuapp.com/api/ttp?text='+teks)
-    .then((res) => {
-      imageToBase64(res.data.result)
-        .then(
-          (ress) => {
-            conn.sendMessage(id, '[ESPERE] Em andamento⏳ por favor, aguarde um momento', MessageType.text)
-            var buf = Buffer.from(ress, 'base64')
-            conn.sendMessage(id, buf, MessageType.image)
-        })
+if (text.includes("#igstalk")){
+	const text = text.replace(/~igstalk /, "")
+	conn.sendMessage(id, "[ WAIT ] Sedang di proses silahkan tunggu sebentar", MessageType.text)
+	axios.get(`https://arugaz.herokuapp.com/api/stalk?username=ini.arga${text}`).then ((res) => {
+    let hasil = ` *Username:* ${res.data.username}\n\n *nama:* ${res.data.name}\n\n *Bio:* ${res.data.biodata}\n\n *Mengikuti:* ${res.data.jumlah_followers}\n\n *Pengikut:* ${res.data.jumlah_following}\n\n *Jumlah Postingan:* ${res.data.jumlah_post}\n\n*Profile:* ${res.data.profile_pic}`
+    conn.sendMessage(id, hasil, MessageType.text)
     })
 }
-
-	
 	
 if (text.includes("#scdl")){
 const fs = require("fs");
