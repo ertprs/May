@@ -770,7 +770,7 @@ if (text.includes("#randomanime"))
     
 if (text.includes("#hentai"))
    {
-    var items = ["nsfwneko","anime hentai","cop swat"];
+    var items = ["nsfwneko","anime hentai"];
     var anim = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.computerfreaker.cf/v1/";
     
