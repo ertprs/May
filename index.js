@@ -749,7 +749,7 @@ axios.get(`https://arugaz.herokuapp.com/api/simisimi?kata=}`).then((res) => {
     });
     }
 
-if (text.includes("#randomanime"))
+if (text.includes("#start"))
    {
     var items = ["anime girl", "anime cantik", "anime", "anime aesthetic"];
     var cewe = items[Math.floor(Math.random() * items.length)];
