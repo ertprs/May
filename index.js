@@ -858,7 +858,6 @@ if (text.includes("#randomanime"))
         } else {
             botTol2()
             }
-        )
     
     });
     }
