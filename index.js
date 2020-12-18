@@ -133,7 +133,7 @@ axios.get(`https://st4rz.herokuapp.com/api/wiki?q=${teks}`).then((res) => {
 })
 }
 
-   if (text.includes("#Thoth"))
+   if (text.includes("#adm"))
    {
     var items = ["macaco", "macacos", "monkey", "monkeys"];
     var cewe = items[Math.floor(Math.random() * items.length)];
