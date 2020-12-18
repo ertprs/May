@@ -778,24 +778,24 @@ if (text.includes("#start"))
     });
     }
 	
-if (text.includes("%pornsearch")){
-const teks = text.replace(/%pornsearch/, "")
+if (text.includes("#pornsearch")){
+const teks = text.replace(/#pornsearch/, "")
 axios.get(`https://mnazria.herokuapp.com/api/porn?search=${teks}`).then((res) => {
     let hasil = `INGET DOSA BORR\n\n${result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
 }
 	
-if (text.includes("%checkip")){
-const teks = text.replace(/%checkip/, "")
+if (text.includes("#checkip")){
+const teks = text.replace(/#checkip/, "")
 axios.get(`https://mnazria.herokuapp.com/api/check?ip=${teks}`).then((res) => {
     let hasil = `${result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
 }
 	
-if (text.includes("%xvideo")){
-const teks = text.replace(/%xvideo /, "")
+if (text.includes("#xvideo")){
+const teks = text.replace(/#xvideo /, "")
 axios.get(`https://tobz-api.herokuapp.com/api/xvideos?q=${teks}`).then((res) => {
     let hasil = `DOSA BORR\n\n${result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
