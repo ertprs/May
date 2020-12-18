@@ -164,7 +164,7 @@ axios.get(`https://st4rz.herokuapp.com/api/wiki?q=${teks}`).then((res) => {
 
 if (text.includes("#fb")){
 const teks = text.replace(/#fb /, "")
-axios.get(`https://mhankbarbar.herokuapp.com/api/epbe?url=${teks}&apiKey=zFuV88pxcIiCWuYlwg57`).then((res) => {
+axios.get(`https://arugaz.herokuapp.com/api/fb?url=`).then((res) => {
     let hasil = `Download sendiri melalui link dibawah ya, takut servernya down xixi..\n\nJudul: ${res.data.title}\n\nSize: ${res.data.filesize}\n\nLink: ${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
@@ -178,6 +178,15 @@ axios.get(`https://mhankbarbar.herokuapp.com/api/ig?url=${teks}&apiKey=zFuV88pxc
 })
 }
 
+if (text.includes("#infoig")){
+  const teks = text.replace(/!infoig /, "")
+  axios.get(`https://alfians-api.herokuapp.com/api/stalk?username=${teks}`).then ((res) =>{
+  conn.sendMessage(id, '[ESPERE] Procurando...⏳', MessageType.text)
+  let hasil = `@ _${teks}_ \n\n *Username🐒* : _${res.data.Username}_ \n *Nome🐒* : _${res.data.Name}_ \n *Número de Seguidores🐵* : _${res.data.Jumlah_Followers}_ \n *Seguindo🐵* : _${res.data.Jumlah_Following}_ \n *Postagens🐵* : _${res.data.Jumlah_Post}_ `;
+  conn.sendMessage(id, hasil, MessageType.text);
+})
+}	
+	
 if (text.includes("#twt")){
 const teks = text.replace(/#twt /, "")
 axios.get(`https://mhankbarbar.herokuapp.com/api/twit?url=${teks}&apiKey=zFuV88pxcIiCWuYlwg57`).then((res) => {
@@ -554,66 +563,14 @@ conn.sendMessage(id, 'kirim #gacha cewek/cowok\n\nContoh: #gacha cewek' ,Message
 
 
    
-   if (text.includes("#yt")) 
-   {
-      const url = text.replace(/#yt/, "");
-      const exec = require('child_process').exec;
-
-      var videoid = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
-
-      const ytdl = require("ytdl-core")
-      if (videoid != null)
-      {
-         console.log("video id = ", videoid[1]);
-      }
-      else
-      {
-         conn.sendMessage(id, "gavalid", MessageType.text)
-      }
-      ytdl.getInfo(videoid[1]).then(info =>
-      {
-         if (info.length_seconds > 1000)
-         {
-            conn.sendMessage(id, " videonya kepanjangan", MessageType.text)
-         }
-         else
-         {
-
-            console.log(info.length_seconds)
-
-            function os_func()
-            {
-               this.execCommand = function (cmd)
-               {
-                  return new Promise((resolve, reject) =>
-                  {
-                     exec(cmd, (error, stdout, stderr) =>
-                     {
-                        if (error)
-                        {
-                           reject(error);
-                           return;
-                        }
-                        resolve(stdout)
-                     });
-                  })
-               }
-            }
-            var os = new os_func();
-
-            os.execCommand('ytdl ' + url + ' -q highest -o mp4/' + videoid[1] + '.mp4').then(res =>
-            {
-		const buffer = fs.readFileSync("mp4/"+ videoid[1] +".mp4")
-               conn.sendMessage(id, buffer, MessageType.video)
-            }).catch(err =>
-            {
-               console.log("os >>>", err);
-            })
-
-         }
-      });
-
-   }
+ if (text.includes("#ytmp4")){
+const teks = text.replace(/!ytmp4 /, "")
+axios.get(`https://alfians-api.herokuapp.com/api/ytv?url=${teks}`).then((res) => {
+	conn.sendMessage(id, '[ESPERE] Procurando...⏳', MessageType.text)
+    let hasil = ` *Título:* ${res.data.title}\n\n *Tipo:* ${res.data.ext}\n\n *Resolução:* ${res.data.resolution}\n\n *Tamanho:* ${res.data.filesize}\n\n *Audio:* ${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+})
+}
 
    
    //ytmp3 
