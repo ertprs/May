@@ -768,34 +768,31 @@ if (text.includes("#randomanime"))
     });
     }
     
-if (text.includes("#hentai"))
-   {
-    var items = ["nsfwneko","anime hentai"];
-    var anim = items[Math.floor(Math.random() * items.length)];
-    var url = "https://api.computerfreaker.cf/v1/";
-    
-    axios.get(url)
-      .then((result) => {
-        var b = JSON.parse(JSON.stringify(result.data));
-        var anim =  b[Math.floor(Math.random() * b.length)];
-        imageToBase64(anim) // Path to the image
+if (text.includes('#hentai')){
+  var teks = text.replace(/!randomhentai2 /, '')
+    axios.get(`https://tobz-api.herokuapp.com/api/hentai`).then((res) => {
+      imageToBase64(res.data.result)
         .then(
-            (response) => {
-	var buf = Buffer.from(response, 'base64'); // Ta-da	
-              conn.sendMessage(
-            id,
-              buf,MessageType.image)
-       
-            }
-        )
-        .catch(
-            (error) => {
-                console.log(error); // Logs an error if there was one
-            }
-        )
-    
-    });
-    }
+          (ress) => {
+            var buf = Buffer.from(ress, 'base64')
+            conn.sendMessage(id, buf, MessageType.image)
+        })
+    })
+}
+
+if (text.includes('~tts2')){
+  var teks = text.replace(/~tts2 /, '')
+    axios.get('http://scrap.terhambar.com/tts?kata=${teks}')
+    .then((res) => {
+      audioToBase64(res.data.result)
+        .then(
+          (ress) => {
+            conn.sendMessage(id, '[WAIT] Searching...❗', MessageType.text)
+            let hasil = hasil.from(ress, 'base64')
+            conn.sendMessage(from, hasil, MessageType.audio, {ptt: true})
+        })
+    })
+}
        
 if (text.includes("#scdl")){
 const fs = require("fs");
