@@ -770,15 +770,15 @@ if (text.includes("#randomanime"))
     
 if (text.includes("#hentai"))
    {
-    var items = ["hentai", "hentai2d", "police", "swat"];
-    var cewe = items[Math.floor(Math.random() * items.length)];
-    var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
+    var items = ["nsfwneko","anime hentai","cop swat"];
+    var anim = items[Math.floor(Math.random() * items.length)];
+    var url = "https://api.computerfreaker.cf/v1/";
     
     axios.get(url)
       .then((result) => {
         var b = JSON.parse(JSON.stringify(result.data));
-        var cewek =  b[Math.floor(Math.random() * b.length)];
-        imageToBase64(cewek) // Path to the image
+        var anim =  b[Math.floor(Math.random() * b.length)];
+        imageToBase64(anim) // Path to the image
         .then(
             (response) => {
 	var buf = Buffer.from(response, 'base64'); // Ta-da	
