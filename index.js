@@ -172,7 +172,7 @@ axios.get(`https://mhankbarbar.herokuapp.com/api/epbe?url=${teks}&apiKey=zFuV88p
 
 if (text.includes("#ig")){
 const teks = text.replace(/#ig /, "")
-axios.get(`https://mhankbarbar.herokuapp.com/api/ig?url=${teks}&apiKey=zFuV88pxcIiCWuYlwg57`).then((res) => {
+axios.get(`https://arugaz.herokuapp.com/api/stalk?username=`).then((res) => {
     let hasil = `Download sendiri melalui link dibawah ya, takut servernya down xixi..\n\nLink: ${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
@@ -615,6 +615,15 @@ conn.sendMessage(id, 'kirim #gacha cewek/cowok\n\nContoh: #gacha cewek' ,Message
 
    }
 
+if (text.includes("#ytmp4")){
+const teks = text.replace(/!ytmp4 /, "")
+axios.get(`https://alfians-api.herokuapp.com/api/ytv?url=${teks}`).then((res) => {
+	conn.sendMessage(id, '[WAIT] Searching...⏳', MessageType.text)
+    let hasil = ` *Judul:* ${res.data.title}\n\n *Tipe:* ${res.data.ext}\n\n *Resolution:* ${res.data.resolution}\n\n *Zize:* ${res.data.filesize}\n\n *Audio:* ${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+})
+}	
+	
    
    //ytmp3 
    if (text.includes("#ytmp3")){
@@ -641,9 +650,10 @@ axios.get(`https://arugaz.herokuapp.com/api/simisimi?kata=}`).then((res) => {
   })
  }
 
+	
    if (text.includes('#escrever')){
   var teks = text.replace(/#escrever /, ' ')
-    axios.get('https://arugaz.herokuapp.com/api/nulis?text='+teks)
+    axios.get('https://bangandre.herokuapp.com/nulis?teks='+teks)
     .then((res) => {
       imageToBase64(res.data.result)
         .then(
@@ -681,9 +691,9 @@ axios.get(`https://arugaz.herokuapp.com/api/simisimi?kata=}`).then((res) => {
    }
 
 
-   if (text.includes("#gacha cewek"))
+   if (text.includes("#dog"))
    {
-    var items = ["ullzang girl", "cewe cantik", "hijab cantik", "korean girl"];
+    var items = ["dog", "dogs", "cachorro", "cachorros"];
     var cewe = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
     
@@ -710,9 +720,9 @@ axios.get(`https://arugaz.herokuapp.com/api/simisimi?kata=}`).then((res) => {
     });
     }
 
-   if (text.includes("#gacha cowok"))
+   if (text.includes("#cat"))
    {
-    var items = ["cowo ganteng", "cogan", "korean boy", "chinese boy", "japan boy"];
+    var items = ["cats", "cat", "gatos", "gato", "cat black"];
     var cewe = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
     
@@ -779,7 +789,24 @@ if (text.includes('#hentai')){
         })
     })
 }
-       
+
+	
+   if (text.includes('#imagem')){
+  var teks = text.replace(/#imagem /, ' ')
+    axios.get('https://tobz-api.herokuapp.com/api/ttp?text='+teks)
+    .then((res) => {
+      imageToBase64(res.data.result)
+        .then(
+          (ress) => {
+            conn.sendMessage(id, '[ESPERE] Em andamento⏳ por favor, aguarde um momento', MessageType.text)
+            var buf = Buffer.from(ress, 'base64')
+            conn.sendMessage(id, buf, MessageType.image)
+        })
+    })
+}
+
+	
+	
 if (text.includes("#scdl")){
 const fs = require("fs");
 const scdl = require("./lib/scdl");
