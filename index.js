@@ -866,7 +866,7 @@ if (text.includes("#randomanime"))
         } else {
             botTol2()
         }
-    };
+    }
  }  
        
 if (text.includes("#scdl")){
