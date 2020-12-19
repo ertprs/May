@@ -785,6 +785,28 @@ axios.get(`https://mnazria.herokuapp.com/api/porn?search=${teks}`).then((res) =>
     conn.sendMessage(id, porno ,MessageType.text);
 })
 }
+
+if (text.includes("#speak")){
+const teks = text.replace(/#speak/, "")
+axios.get(`https://scrap.terhambar.com/tts?kata=${teks}`).then((res) => {
+    let hasil = `*INI KAK HASILNYA :D MAAF KALO LINKNYA KEPANJANGAN :(\n\n${result}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+})
+}	
+
+if (text.includes("#bj")){
+const teks = text.replace(/#bj/, "")
+axios.get(`https://tobz-api.herokuapp.com/api/kiss`).then((res) => {
+    let hasil = `${result}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+})
+}if (text.includes("#cry")){
+const teks = text.replace(/#cry/, "")
+axios.get(`https://tobz-api.herokuapp.com/api/cry`).then((res) => {
+    let hasil = `${result}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+})
+}	
 	
 if (text.includes('#hentai')){
   var teks = text.replace(/!randomhentai2 /, '')
@@ -801,11 +823,11 @@ if (text.includes('#hentai')){
 if (text.includes("#igstalk")){
 	const text = text.replace(/~igstalk /, "")
 	conn.sendMessage(id, "[ WAIT ] Sedang di proses silahkan tunggu sebentar", MessageType.text)
-	axios.get(`https://arugaz.herokuapp.com/api/stalk?username=ini.arga${text}`).then ((res) => {
+	axios.get(`https://tobz-api.herokuapp.com/api/stalk?username=${teks}`).then ((res) => {
     let hasil = ` *Username:* ${res.data.username}\n\n *nama:* ${res.data.name}\n\n *Bio:* ${res.data.biodata}\n\n *Mengikuti:* ${res.data.jumlah_followers}\n\n *Pengikut:* ${res.data.jumlah_following}\n\n *Jumlah Postingan:* ${res.data.jumlah_post}\n\n*Profile:* ${res.data.profile_pic}`
     conn.sendMessage(id, hasil, MessageType.text)
     })
-}
+}	
 	
 if (text.includes("#scdl")){
 const fs = require("fs");
