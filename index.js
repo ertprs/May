@@ -133,7 +133,7 @@ axios.get(`https://st4rz.herokuapp.com/api/wiki?q=${teks}`).then((res) => {
 })
 }
 
-   if (text.includes("#adm"))
+   if (text.includes("#may"))
    {
     var items = ["macaco", "macacos", "monkey", "monkeys"];
     var cewe = items[Math.floor(Math.random() * items.length)];
@@ -226,10 +226,10 @@ var tampilTanggal = "DATA: " + hari + ", " + tanggal + " " + bulan + " " + tahun
 var tampilWaktu = "HORA: " + jam + ":" + menit + ":" + detik;
 conn.sendMessage(id, menu.menu(id, BotName, corohelp, tampilTanggal, tampilWaktu, instagramlu, whatsapplu, kapanbotaktif, grupch1, grupch2) ,MessageType.text);
 }
-else if (text == 'Thoth voce gosta de min?'){
+else if (text == 'May voce gosta de min?'){
 conn.sendMessage(id, 'Claro que sim eu pagaria facil kkk' ,MessageType.text);
 }
-else if (text == 'Te amo thoth'){
+else if (text == 'Te amo May'){
 conn.sendMessage(id, 'Eu eo resto do grupo né?' ,MessageType.text);
 }
 else if (text == 'Assalamualaikum'){
@@ -308,7 +308,7 @@ else if (text == '#dar'){
 conn.sendMessage(id, 'VAI LER O SALMO 91 VAGABUNDO(A)🤨...' ,MessageType.text);
 }
 else if (text == '#kiss'){
-conn.sendMessage(id, 'Thoth deu um beijo em você🥰' ,MessageType.text);
+conn.sendMessage(id, 'May deu um beijo em você🥰' ,MessageType.text);
 }
 else if (text == '#sticker'){
 conn.sendMessage(id, 'COLOQUE O COMANDO NA LEGENDA DA FOTO...' ,MessageType.text);
@@ -635,7 +635,7 @@ axios.get(`https://alfians-api.herokuapp.com/api/yta?url=${teks}`).then((res) =>
 })
 } 
 
-if (text.includes("Thoth")){
+if (text.includes("May")){
 const aris = text.replace(/Thoth /, "")
 axios.get(`https://arugaz.herokuapp.com/api/simisimi?kata=}`).then((res) => {
     let hasil = `${res.data.result}`;
@@ -751,7 +751,7 @@ axios.get(`https://arugaz.herokuapp.com/api/simisimi?kata=}`).then((res) => {
 
 if (text.includes("#start"))
    {
-    var items = ["anime girl", "anime cantik", "anime", "anime aesthetic"];
+    var items = ["anime girl", "anime cantik", "anime monkey", "anime aesthetic"];
     var cewe = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
     
