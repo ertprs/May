@@ -635,14 +635,14 @@ axios.get(`https://alfians-api.herokuapp.com/api/yta?url=${teks}`).then((res) =>
 })
 } 
 
-if (text.includes("May")){
-const aris = text.replace(/Thoth /, "")
+if (text.includes("..May")){
+const aris = text.replace(/..May /, "")
 axios.get(`https://arugaz.herokuapp.com/api/simisimi?kata=}`).then((res) => {
     let hasil = `${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
   })
  }
- if (text.includes("Bot")){
+ if (text.includes("..Bot")){
 const aris = text.replace(/Bot /, "")
 axios.get(`https://arugaz.herokuapp.com/api/simisimi?kata=}`).then((res) => {
     let hasil = `${res.data.result}`;
