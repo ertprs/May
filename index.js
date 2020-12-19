@@ -637,14 +637,28 @@ axios.get(`https://alfians-api.herokuapp.com/api/yta?url=${teks}`).then((res) =>
 
 if (text.includes("May")){
 const aris = text.replace(/May /, "")
-axios.get(`https://tobz-api.herokuapp.com/api/simsimi?text=`).then((res) => {
+axios.get(`https://tobz-api.herokuapp.com/api/simsimi?text=${aris}`).then((res) => {
+    let hasil = `${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+  })
+ }
+ if (text.includes("may")){
+const aris = text.replace(/may /, "")
+axios.get(`https://tobz-api.herokuapp.com/api/simsimi?text=${aris}`).then((res) => {
+    let hasil = `${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+  })
+ }
+ if (text.includes("bot")){
+const aris = text.replace(/bot /, "")
+axios.get(`https://tobz-api.herokuapp.com/api/simsimi?text=${aris}`).then((res) => {
     let hasil = `${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
   })
  }
  if (text.includes("Bot")){
 const aris = text.replace(/Bot /, "")
-axios.get(`https://tobz-api.herokuapp.com/api/simsimi?text=`).then((res) => {
+axios.get(`https://tobz-api.herokuapp.com/api/simsimi?text=${aris}`).then((res) => {
     let hasil = `${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
   })
