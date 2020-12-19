@@ -794,13 +794,7 @@ axios.get(`https://scrap.terhambar.com/tts?kata=${teks}`).then((res) => {
 })
 }	
 
-if (text.includes("#bj")){
-const teks = text.replace(/#bj/, "")
-axios.get(`https://tobz-api.herokuapp.com/api/kiss`).then((res) => {
-    let hasil = `${result}`;
-    conn.sendMessage(id, hasil ,MessageType.text);
-})
-}if (text.includes("#cry")){
+if (text.includes("#cry")){
 const teks = text.replace(/#cry/, "")
 axios.get(`https://tobz-api.herokuapp.com/api/cry`).then((res) => {
     let hasil = `${result}`;
