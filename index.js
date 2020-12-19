@@ -785,14 +785,6 @@ axios.get(`https://mnazria.herokuapp.com/api/porn?search=${teks}`).then((res) =>
     conn.sendMessage(id, porno ,MessageType.text);
 })
 }
-
-if (text.includes("#speak")){
-const teks = text.replace(/#speak/, "")
-axios.get(`https://scrap.terhambar.com/tts?kata=${teks}`).then((res) => {
-    let hasil = `*INI KAK HASILNYA :D MAAF KALO LINKNYA KEPANJANGAN :(\n\n${result}`;
-    conn.sendMessage(id, hasil ,MessageType.text);
-})
-}	
 	
 if (text.includes('#hentai')){
   var teks = text.replace(/!randomhentai2 /, '')
