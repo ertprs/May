@@ -793,14 +793,6 @@ axios.get(`https://scrap.terhambar.com/tts?kata=${teks}`).then((res) => {
     conn.sendMessage(id, hasil ,MessageType.text);
 })
 }	
-
-if (text.includes("#cry")){
-const teks = text.replace(/#cry/, "")
-axios.get(`https://tobz-api.herokuapp.com/api/cry`).then((res) => {
-    let hasil = `${result}`;
-    conn.sendMessage(id, hasil ,MessageType.text);
-})
-}	
 	
 if (text.includes('#hentai')){
   var teks = text.replace(/!randomhentai2 /, '')
