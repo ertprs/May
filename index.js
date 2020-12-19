@@ -14,7 +14,7 @@ const info = require("./lib/info.js");
 
 
 //
-const BotName = 'Mini Thoth'; // Nome do Whatsapp Bot
+const BotName = 'May'; // Nome do Whatsapp Bot
 const instagramlu = 'https://www.instagram.com/crwthmgs/'; // Nome do Instagram
 const whatsapplu = '+55 11 940787327'; // Número do Whatsapp
 const kapanbotaktif = '24 Horas'; // Quando seu bot estava ativo
