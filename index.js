@@ -778,11 +778,11 @@ if (text.includes("#start"))
     });
     }
 	
-if (text.includes("#pornsearch")){
+if (text.includes("#porn")){
 const teks = text.replace(/#pornsearch/, "")
 axios.get(`https://mnazria.herokuapp.com/api/porn?search=${teks}`).then((res) => {
-    let porno = ` LISTA DOS RESULTADOS \n\n ${res.data.result[0]}`;
-    conn.sendMessage(id, porno ,MessageType.text);
+    let hasil = `INGET DOSA BORR\n\n${result}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
 })
 }
 	
