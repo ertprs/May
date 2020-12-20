@@ -812,6 +812,18 @@ if (text.includes('#hentai')){
     })
 }
 
+if (text.includes('#trap')){
+  var teks = text.replace(/#trap /, '')
+    axios.get(`https://tobz-api.herokuapp.com/api/nsfwtrap`).then((res) => {
+      imageToBase64(res.data.result)
+        .then(
+          (ress) => {
+            var buf = Buffer.from(ress, 'base64')
+            conn.sendMessage(id, buf, MessageType.image)
+        })
+    })
+}	
+	
 if (text.includes("#igstalk")){
 	const text = text.replace(/#igstalk /, "")
 	conn.sendMessage(id, "[ WAIT ] Sedang di proses silahkan tunggu sebentar", MessageType.text)
