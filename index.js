@@ -687,7 +687,7 @@ axios.get(`https://tobz-api.herokuapp.com/api/simsimi?text=${aris}`).then((res) 
 	
    if (text.includes('#escrever')){
   var teks = text.replace(/#escrever /, ' ')
-    axios.get('https://bangandre.herokuapp.com/nulis?teks='+teks)
+    axios.get('https://api.haipbis.xyz/randomcooltext?text='+teks)
     .then((res) => {
       imageToBase64(res.data.result)
         .then(
@@ -887,8 +887,8 @@ if (text.includes("#pokemon"))
     });
     }	
 	
-if (text.includes('#kis')){
-  var teks = text.replace(/#kis /, "")
+if (text.includes('#kiss')){
+  var teks = text.replace(/!kiss /, "")
     axios.get('https://tobz-api.herokuapp.com/api/kiss')
     .then((res) => {
       imagegifToBase64(res.data.result)
@@ -901,18 +901,6 @@ if (text.includes('#kis')){
     })
 }
 
-if (text.includes('#img')){
-  var teks = text.replace(/!urltoimg /, "")
-    axios.get(`https://mhankbarbar.herokuapp.com/api/url2image?url=${teks}&apiKey=N2Ws9kp3KTDYtry5Jjyz`).then((res) => {
-      imageToBase64(res.data.result)
-        .then(
-          (ress) => {
-            var buf = Buffer.from(ress, 'base64')
-            conn.sendMessage(id, buf, MessageType.image)
-        })
-    })
-}	
-	
 if (text.includes('#text')){
   var teks = text.replace(/#cooltext /, "")
     axios.get('https://api.haipbis.xyz/randomcooltext?text='+'{teks})
