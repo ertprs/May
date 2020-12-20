@@ -133,7 +133,7 @@ axios.get(`https://st4rz.herokuapp.com/api/wiki?q=${teks}`).then((res) => {
 })
 }
 
-   if (text.includes("#may"))
+   if (text.includes("#ftmay"))
    {
     var items = ["macaco", "macacos", "monkey", "monkeys"];
     var cewe = items[Math.floor(Math.random() * items.length)];
@@ -649,8 +649,8 @@ axios.get(`https://tobz-api.herokuapp.com/api/simsimi?text=${aris}`).then((res) 
     conn.sendMessage(id, hasil ,MessageType.text);
   })
  }
- if (text.includes("Shiro")){
-const aris = text.replace(/oq vc acha dele?/, "")
+ if (text.includes("bot")){
+const aris = text.replace(/bot /, "")
 axios.get(`https://tobz-api.herokuapp.com/api/simsimi?text=${aris}`).then((res) => {
     let hasil = `${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
