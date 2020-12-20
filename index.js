@@ -886,20 +886,6 @@ if (text.includes('#kiss')){
         })
     })
 }
-
-if (text.includes('#text')){
-  var teks = text.replace(/#cooltext /, "")
-    axios.get('https://api.haipbis.xyz/randomcooltext?text='+'{teks})
-    .then((res) => {
-      imageToBase64(res.data.image)
-        .then(
-          (ress) => {
-            conn.sendMessage(id, '[❗] AGUARDE', MessageType.text)
-            var buf = Buffer.from(ress, 'base64')
-            conn.sendMessage(id, buf, MessageType.image)
-        })
-    })
-}	
 	
 if (text.includes("#igstalk")){
   const aris = text.replace(/#igstalk /, "")
