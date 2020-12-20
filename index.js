@@ -929,7 +929,7 @@ if (text.includes('#img')){
 	
 if (text.includes('#text')){
   var teks = text.replace(/#cooltext /, "")
-    axios.get('https://api.haipbis.xyz/randomcooltext?text='+teks)
+    axios.get('https://api.haipbis.xyz/randomcooltext?text='+'{teks})
     .then((res) => {
       imageToBase64(res.data.image)
         .then(
