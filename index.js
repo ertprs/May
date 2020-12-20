@@ -307,7 +307,7 @@ conn.sendMessage(id, '🙏Você continua vivo, passe a vez.' ,MessageType.text);
 else if (text == '#dar'){
 conn.sendMessage(id, 'VAI LER O SALMO 91 VAGABUNDO(A)🤨...' ,MessageType.text);
 }
-else if (text == '#kiss'){
+else if (text == '#beijo'){
 conn.sendMessage(id, 'May deu um beijo em você🥰' ,MessageType.text);
 }
 else if (text == '#sticker'){
@@ -844,13 +844,33 @@ if (text.includes('#trap')){
     })
 }	
 
-if (text.includes("#ip")){
-const aris = text.replace(/#ip /, "")
-axios.get(`https://mnazria.herokuapp.com/api/check?ip=${teks}`).then((res) => {
-    let hasil = `${res.data.result}`;
-    conn.sendMessage(id, hasil ,MessageType.text);
-  })
- }	
+if (text.includes('#kiss')){
+  var teks = text.replace(/!randomkis /, '')
+    axios.get('https://tobz-api.herokuapp.com/api/kiss')
+    .then((res) => {
+      imagegifToBase64(res.data.result)
+        .then(
+          (ress) => {
+            conn.sendMessage(id, '[❗] AGUARDE', MessageType.text)
+            var buf = Buffer.from(ress, 'base64')
+            conn.sendMessage(id, buf, MessageType.imagegif)
+        })
+    })
+}
+
+if (text.includes('#text')){
+  var teks = text.replace(/!cooltext /, '')
+    axios.get('https://api.haipbis.xyz/randomcooltext?text='+teks)
+    .then((res) => {
+      imageToBase64(res.data.image)
+        .then(
+          (ress) => {
+            conn.sendMessage(id, '[❗] AGUARDE', MessageType.text)
+            var buf = Buffer.from(ress, 'base64')
+            conn.sendMessage(id, buf, MessageType.image)
+        })
+    })
+}	
 	
 if (text.includes("#igstalk")){
   const aris = text.replace(/#igstalk /, "")
