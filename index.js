@@ -843,20 +843,6 @@ if (text.includes('#trap')){
         })
     })
 }	
-
-if (text.includes('#text3d')){
-  var teks = text.replace(/#text3d /, "")
-    axios.get('http://jojo-api-doc.herokuapp.com/api/text3d?text=${teks}')
-    .then((res) => {
-      imageToBase64(res.data.result)
-        .then(
-          (ress) => {
-            conn.sendMessage(id, '[❗] AGUARDE', MessageType.text)
-            var buf = Buffer.from(ress, 'base64')
-            conn.sendMessage(id, buf, MessageType.image)
-        })
-    })
-}	
 	
 if (text.includes("#pokemon"))
    {
