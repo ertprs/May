@@ -823,6 +823,18 @@ if (text.includes('#trap')){
         })
     })
 }	
+
+if (text.includes('#print')){
+  var teks = text.replace(/'')
+    axios.get(`https://mnazria.herokuapp.com/api/screenshotweb?url=`).then((res) => {
+      imageToBase64(res.data.result)
+        .then(
+          (ress) => {
+            var buf = Buffer.from(ress, 'base64')
+            conn.sendMessage(id, buf, MessageType.image)
+        })
+    })
+}	
 	
 if (text.includes("#igstalk")){
 	const text = text.replace(/#igstalk /, "")
