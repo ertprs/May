@@ -825,7 +825,7 @@ if (text.includes('#trap')){
 }	
 
 if (text.includes('#print')){
-  var teks = text.replace(/'')
+  var teks = text.replace(/#print /, '')
     axios.get(`https://mnazria.herokuapp.com/api/screenshotweb?url=`).then((res) => {
       imageToBase64(res.data.result)
         .then(
