@@ -889,7 +889,7 @@ if (text.includes("#pokemon"))
 	
 if (text.includes('#maps')){
   var teks = text.replace(/#maps /, "")
-    axios.get('https://mnazria.herokuapp.com/api/maps?search='+teks)
+    axios.get('https://mnazria.herokuapp.com/api/maps?search='{teks})
     .then((res) => {
       imageToBase64(res.data.gambar)
         .then(
