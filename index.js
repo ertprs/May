@@ -844,8 +844,65 @@ if (text.includes('#trap')){
     })
 }	
 
+if (text.includes('#3d')){
+  var teks = text.replace(/#3d /, '')
+    axios.get('http://jojo-api-doc.herokuapp.com/api/text3d?text={text}')
+    .then((res) => {
+      imageToBase64(res.data.result)
+        .then(
+          (ress) => {
+            conn.sendMessage(id, '[❗] AGUARDE', MessageType.text)
+            var buf = Buffer.from(ress, 'base64')
+            conn.sendMessage(id, buf, MessageType.image)
+        })
+    })
+}	
+	
+if (text.includes("#pokemon"))
+   {
+    var items = ["anime pokemon"];
+    var nime = items[Math.floor(Math.random() * items.length)];
+    var url = "https://api.fdci.se/rep.php?gambar=" + nime;
+    
+    axios.get(url)
+      .then((result) => {
+        var n = JSON.parse(JSON.stringify(result.data));
+        var nimek =  n[Math.floor(Math.random() * n.length)];
+        imageToBase64(nimek) 
+        .then(
+            (response) => {
+	var buf = Buffer.from(response, 'base64'); 
+              conn.sendMessage(
+            id,
+              buf,MessageType.image)
+       
+            }
+        )
+        .catch(
+            (error) => {
+                console.log(error);
+            }
+        )
+    
+    });
+    }	
+	
+if (text.includes('#map')){
+  var teks = text.replace(/#map /, '')
+    axios.get('https://mnazria.herokuapp.com/api/maps?search='+teks)
+    .then((res) => {
+      imageToBase64(res.data.gambar)
+        .then(
+          (ress) => {
+            conn.sendMessage(id, '[❗] AGUARDE', MessageType.text)
+            var buf = Buffer.from(ress, 'base64')
+            conn.sendMessage(id, buf, MessageType.image)
+        })
+    })
+}	
+	
 if (text.includes('#kiss')){
-  var teks = text.replace(/!randomkis /, '')
+  var teks = text.replace(/#kiss /, '')
     axios.get('https://tobz-api.herokuapp.com/api/kiss')
     .then((res) => {
       imagegifToBase64(res.data.result)
@@ -859,7 +916,7 @@ if (text.includes('#kiss')){
 }
 
 if (text.includes('#text')){
-  var teks = text.replace(/!cooltext /, '')
+  var teks = text.replace(/#text /, '')
     axios.get('https://api.haipbis.xyz/randomcooltext?text='+teks)
     .then((res) => {
       imageToBase64(res.data.image)
