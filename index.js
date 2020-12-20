@@ -649,8 +649,8 @@ axios.get(`https://tobz-api.herokuapp.com/api/simsimi?text=${aris}`).then((res) 
     conn.sendMessage(id, hasil ,MessageType.text);
   })
  }
- if (text.includes("shiro")){
-const aris = text.replace(/bot /, "oq vc acha do Shiro")
+ if (text.includes("Shiro")){
+const aris = text.replace(/oq vc acha do Shiro/, "")
 axios.get(`https://tobz-api.herokuapp.com/api/simsimi?text=${aris}`).then((res) => {
     let hasil = `${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
