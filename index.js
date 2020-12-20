@@ -226,7 +226,7 @@ var tampilTanggal = "DATA: " + hari + ", " + tanggal + " " + bulan + " " + tahun
 var tampilWaktu = "HORA: " + jam + ":" + menit + ":" + detik;
 conn.sendMessage(id, menu.menu(id, BotName, corohelp, tampilTanggal, tampilWaktu, instagramlu, whatsapplu, kapanbotaktif, grupch1, grupch2) ,MessageType.text);
 }
-else if (text == 'May voce gosta de min?'){
+else if (text == 'May voce gosta de mim?'){
 conn.sendMessage(id, 'Claro que sim eu pagaria facil kkk' ,MessageType.text);
 }
 else if (text == 'Te amo May'){
@@ -542,6 +542,25 @@ conn.sendMessage(id, 'kirim #gacha cewek/cowok\n\nContoh: #gacha cewek' ,Message
             });
       }
 
+   }
+	   if (messageType == 'gifMessage')
+   {
+      let caption = imageMessage.caption.toLocaleLowerCase()
+      const buffer = await conn.downloadMediaMessage(m) // to decrypt & use as a buffer
+      if (caption == '#gif')
+      {
+         const stiker = await conn.downloadAndSaveMediaMessage(m) // to decrypt & save to file
+
+         const
+         {
+            exec
+         } = require("child_process");
+         exec('cwebp -q 50 ' + stiker + ' -o temp/' + jam + '.webp', (error, stdout, stderr) =>
+         {
+            let stik = fs.readFileSync('temp/' + jam + '.webp')
+            conn.sendMessage(id, stik, MessageType.sticker)
+         });
+      }
    }
    if (text.includes("#letra")){
 	const teks = text.split("#letra")[1]
