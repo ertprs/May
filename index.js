@@ -837,12 +837,12 @@ if (text.includes('#print')){
 }	
 	
 if (text.includes("#igstalk")){
-	const text = text.replace(/#igstalk /, "")
-	conn.sendMessage(id, "[ WAIT ] Sedang di proses silahkan tunggu sebentar", MessageType.text)
-	axios.get(`https://tobz-api.herokuapp.com/api/stalk?username=ini.arga${text}`).then ((res) => {
-    let hasil = ` *Username:* ${res.data.username}\n\n *nama:* ${res.data.name}\n\n *Bio:* ${res.data.biodata}\n\n *Mengikuti:* ${res.data.jumlah_followers}\n\n *Pengikut:* ${res.data.jumlah_following}\n\n *Jumlah Postingan:* ${res.data.jumlah_post}\n\n*Profile:* ${res.data.profile_pic}`
-    conn.sendMessage(id, hasil, MessageType.text)
-    })
+  const aris = text.replace(/#igstalk /, "")
+  axios.get(`https://alfians-api.herokuapp.com/api/stalk?username=${aris}`).then ((res) =>{
+  conn.sendMessage(id, '[❗] ESPERE ESTA PROCESSANDO', MessageType.text)
+  let hasil = ` INSTAGRAM ${aris} \n\n Nome do usuário✍️ : ${res.data.Username} \n Nome✍️ : ${res.data.Name} \n Número de Seguidores✍️ : ${res.data.Jumlah_Followers} \n Seguindo✍️ : ${res.data.Jumlah_Following} \n Número de Postagem✍️ : ${res.data.Jumlah_Post} `;
+  conn.sendMessage(id, hasil, MessageType.text);
+})
 }
 	
 if (text.includes("#scdl")){
