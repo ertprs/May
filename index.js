@@ -133,7 +133,7 @@ axios.get(`https://st4rz.herokuapp.com/api/wiki?q=${teks}`).then((res) => {
 })
 }
 
-   if (text.includes("#ftmay"))
+   if (text.includes("#adm"))
    {
     var items = ["macaco", "macacos", "monkey", "monkeys"];
     var cewe = items[Math.floor(Math.random() * items.length)];
@@ -189,7 +189,7 @@ axios.get(`https://mhankbarbar.herokuapp.com/api/twit?url=${teks}&apiKey=zFuV88p
 
 
 
-if (text == '#help'){
+if (text == '#menu'){
 const corohelp = await get.get('https://covid19.mathdro.id/api/countries/br').json()
 var date = new Date();
 var tahun = date.getFullYear();
@@ -763,7 +763,7 @@ axios.get(`https://tobz-api.herokuapp.com/api/simsimi?text=${aris}`).then((res) 
     });
     }
 
-if (text.includes("#start"))
+if (text.includes("#anime"))
    {
     var items = ["anime girl", "anime cantik", "anime monkey", "anime aesthetic"];
     var cewe = items[Math.floor(Math.random() * items.length)];
