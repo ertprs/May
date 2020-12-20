@@ -824,17 +824,13 @@ if (text.includes('#trap')){
     })
 }	
 
-if (text.includes('#print')){
-  var teks = text.replace(/#print /, '')
-    axios.get(`https://mnazria.herokuapp.com/api/screenshotweb?url=`).then((res) => {
-      imageToBase64(res.data.result)
-        .then(
-          (ress) => {
-            var buf = Buffer.from(ress, 'base64')
-            conn.sendMessage(id, buf, MessageType.image)
-        })
-    })
-}	
+if (text.includes("#ip")){
+const aris = text.replace(/#ip /, "")
+axios.get(`https://mnazria.herokuapp.com/api/check?ip=${teks}`).then((res) => {
+    let hasil = `${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+  })
+ }	
 	
 if (text.includes("#igstalk")){
   const aris = text.replace(/#igstalk /, "")
