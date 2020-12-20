@@ -846,7 +846,7 @@ if (text.includes('#trap')){
 
 if (text.includes('#text3d')){
   var teks = text.replace(/#text3d /, "")
-    axios.get('http://jojo-api-doc.herokuapp.com/api/text3d?text={text}')
+    axios.get('http://jojo-api-doc.herokuapp.com/api/text3d?text='{text})
     .then((res) => {
       imageToBase64(res.data.result)
         .then(
