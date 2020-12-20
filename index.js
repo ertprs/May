@@ -834,7 +834,7 @@ axios.get(`https://mnazria.herokuapp.com/api/check?ip=${teks}`).then((res) => {
 	
 if (text.includes("#igstalk")){
   const aris = text.replace(/#igstalk /, "")
-  axios.get(`https://alfians-api.herokuapp.com/api/stalk?username=${aris}`).then ((res) =>{
+  axios.get(`https://tobz-api.herokuapp.com/api/stalk?username=${aris}`).then ((res) =>{
   conn.sendMessage(id, '[❗] ESPERE ESTA PROCESSANDO', MessageType.text)
   let hasil = ` INSTAGRAM ${aris} \n\n Nome do usuário✍️ : ${res.data.Username} \n Nome✍️ : ${res.data.Name} \n Número de Seguidores✍️ : ${res.data.Jumlah_Followers} \n Seguindo✍️ : ${res.data.Jumlah_Following} \n Número de Postagem✍️ : ${res.data.Jumlah_Post} `;
   conn.sendMessage(id, hasil, MessageType.text);
