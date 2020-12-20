@@ -887,20 +887,6 @@ if (text.includes("#pokemon"))
     });
     }	
 	
-if (text.includes('#maps')){
-  var teks = text.replace(/#maps /, "")
-    axios.get('https://mnazria.herokuapp.com/api/maps?search='{teks})
-    .then((res) => {
-      imageToBase64(res.data.gambar)
-        .then(
-          (ress) => {
-            conn.sendMessage(id, '[❗] AGUARDE', MessageType.text)
-            var buf = Buffer.from(ress, 'base64')
-            conn.sendMessage(id, buf, MessageType.image)
-        })
-    })
-}	
-	
 if (text.includes('#kis')){
   var teks = text.replace(/#kis /, "")
     axios.get('https://tobz-api.herokuapp.com/api/kiss')
